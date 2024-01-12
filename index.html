@@ -151,10 +151,11 @@ function deleteLast() {
     display.value = expression;
 }
 
+
 function calculate() {
     try {
         let result = eval(expression);
-        result = result.toFixed(4); // Round to 4 decimal places
+        result = parseFloat(result.toFixed(3)); // Round to 4 decimal places and convert back to a number
         display.value = result;
         addToHistory(expression, result);
         expression = ''; // Clear the expression after calculation
@@ -162,7 +163,6 @@ function calculate() {
         display.value = 'Error';
     }
 }
-
 
 
 function getRandomColor() {
